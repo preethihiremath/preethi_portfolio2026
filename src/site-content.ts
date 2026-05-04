@@ -7,8 +7,8 @@ export const hero = {
     subtitle:
         "Backend engineer with 2+ years at Deutsche Bank specializing in high-performance distributed systems and machine learning applications.",
     primaryAction: { label: "Get In Touch", href: "mailto:preethivhiremath.vh25@gmail.com" },
-    secondaryAction: { label: "Resume", href: "src/files/resume.pdf" },
-    profileImagePath: "src/files/preethi_pfp.jpg",
+    secondaryAction: { label: "Resume", href: "/resume.pdf" },
+    profileImagePath: "/preethi_pfp.jpg",
 };
 
 export const aboutTimeline = [
