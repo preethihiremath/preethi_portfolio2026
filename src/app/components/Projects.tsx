@@ -3,6 +3,7 @@ import { useInView } from "./hooks/useInView";
 import { BrainSurfProject } from "./projects/BrainSurfProject";
 import { SnitchLintProject } from "./projects/SnitchLintProject";
 import { TranslatorProject } from "./projects/TranslatorProject";
+import { TraceProject } from "./projects/TraceProject";
 import { projectSection } from "../../site-content";
 
 export function Projects() {
@@ -29,6 +30,7 @@ export function Projects() {
           <BrainSurfProject inView={inView} />
           <SnitchLintProject inView={inView} />
           <TranslatorProject inView={inView} />
+          <TraceProject inView={inView} />
         </div>
       </div>
     </section>

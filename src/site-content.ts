@@ -82,31 +82,31 @@ export const contactSection = {
 };
 
 
-export const skillsSection = {
-    heading: "Tech Stack",
-    subheading: "Technologies I use to build scalable systems",
-    skills: [
-        { name: "Java", level: 95, color: "from-orange-400 to-red-500" },
-        { name: "Spring Boot", level: 95, color: "from-green-400 to-green-600" },
-        { name: "React", level: 90, color: "from-cyan-400 to-cyan-600" },
-        { name: "Python", level: 88, color: "from-blue-400 to-blue-600" },
-        { name: "SQL", level: 85, color: "from-indigo-400 to-indigo-600" },
-        { name: "Node.js", level: 80, color: "from-green-500 to-green-700" },
-        { name: "Docker", level: 75, color: "from-blue-500 to-cyan-500" },
-        { name: "GCP", level: 57, color: "from-yellow-400 to-orange-500" },
-    ] as const,
-    extraSkills: [
-        "Git",
-        "Kubernetes",
-        "REST and SOAP API",
-        "TensorFlow",
-        "Keras",
-        "scikit-learn",
-        "LSTM",
-        "Streamlit",
-        "Linux",
-    ] as const,
-};
+// export const skillsSection = {
+//     heading: "Tech Stack",
+//     subheading: "Technologies I use to build scalable systems",
+//     skills: [
+//         { name: "Java", level: 95, color: "from-orange-400 to-red-500" },
+//         { name: "Spring Boot", level: 95, color: "from-green-400 to-green-600" },
+//         { name: "React", level: 90, color: "from-cyan-400 to-cyan-600" },
+//         { name: "Python", level: 88, color: "from-blue-400 to-blue-600" },
+//         { name: "SQL", level: 85, color: "from-indigo-400 to-indigo-600" },
+//         { name: "Node.js", level: 80, color: "from-green-500 to-green-700" },
+//         { name: "Docker", level: 75, color: "from-blue-500 to-cyan-500" },
+//         { name: "GCP", level: 57, color: "from-yellow-400 to-orange-500" },
+//     ] as const,
+//     extraSkills: [
+//         "Git",
+//         "Kubernetes",
+//         "REST and SOAP API",
+//         "TensorFlow",
+//         "Keras",
+//         "scikit-learn",
+//         "LSTM",
+//         "Streamlit",
+//         "Linux",
+//     ] as const,
+// };
 
 export const experienceSection = {
     heading: "Experience",
@@ -196,10 +196,33 @@ export const projects =
      links: [{ label: "Github", href: "https://github.com/preethihiremath/brainsurf" },
         { label: "PyPI", href: "https://pypi.org/project/brainsurf/" }
 
-     ], tags: ["Python", "PyPI", "EEG", "Signal Processing"], }, { id: "snitchlint", title: "SnitchLint", impact: "Security-first developer tooling.", bullets: ["A developer first static security analysis engine for JS/TS using the TypeScript AST", "Implemented a taint/dataflow analysis system that Tracks propagation across assignments, expressions, and function calls and Supports parameter seeding to detect vulnerabilities across helper functions", "Detects OWASP Top 10-inspired vulnerabilities (XSS, SQLi, SSRF, secrets, command injection, weak crypto)", "Integrated directly into VS Code Problems panel with stable rule codes and remediation hints", "Designed extensible rule engine architecture with typed models and test coverage"],
+     ], tags: ["Python", "PyPI", "EEG", "Signal Processing"], },
+     
+     
+      {
+        id:"trace",
+  title: "TRACE",
+  impact: "Retrieval-augmented assistant for production-support Q&A over docs and code.",
+  bullets: [
+    "Built a retrieval-augmented generation system answering production-support questions from documentation and Java source code, using LangChain, Chroma, and Gemini 2.5 Flash.",
+    "Designed a dual-source ingestion pipeline unifying Markdown runbooks and Java code into a single Chroma vector store via metadata tagging, with local sentence-transformer embeddings (all-MiniLM-L6-v2).",
+    "Implemented two-stage retrieval (bi-encoder top-k search followed by cross-encoder reranking with ms-marco-MiniLM-L-6-v2) with an empirically tuned similarity threshold, improving relevance over flat vector search.",
+    "Built a custom Pydantic-based LangChain retriever wrapping Chroma's base retriever with reranking, integrated into an LCEL retrieval-chain architecture with a decoupled FastAPI backend and React frontend.",
+    "Instrumented the pipeline with MLflow, logging retrieval and generation metrics per query for observability.",
+    "Added ingest-time confidentiality filtering, excluding tagged sensitive documents before they are ever embedded or indexed.",
+  ],
+  links: [
+    { label: "Github", href: "https://github.com/preethihiremath/rag_support_assistant" },
+    { label: "More", href: "https://github.com/preethihiremath/rag_support_assistant" },
+  ],
+  tags: ["LangChain", "RAG", "Chroma", "FastAPI", "React", "MLflow"],
+},
+     
+     { id: "snitchlint", title: "SnitchLint", impact: "Security-first developer tooling.", bullets: ["A developer first static security analysis engine for JS/TS using the TypeScript AST", "Implemented a taint/dataflow analysis system that Tracks propagation across assignments, expressions, and function calls and Supports parameter seeding to detect vulnerabilities across helper functions", "Detects OWASP Top 10-inspired vulnerabilities (XSS, SQLi, SSRF, secrets, command injection, weak crypto)", "Integrated directly into VS Code Problems panel with stable rule codes and remediation hints", "Designed extensible rule engine architecture with typed models and test coverage"],
         
         
         links: [{ label: "Github", href: "https://github.com/preethihiremath/snitchlint" },
+            
             { label: "VS Code Marketplace", href: "https://marketplace.visualstudio.com/items?itemName=preethivhiremath.snitchlint" }
 
 
@@ -213,13 +236,16 @@ export const skillLevels = [
   { name: "React", value: 95 },
   { name: "Python", value: 85 },
   { name: "SQL", value: 85 },
+  { name: "LangChain", value: 75 },
+  { name: "Docker", value: 75 },
   { name: "Node.js", value: 70 },
-  { name: "GCP", value: 70 },
-  { name: "Docker", value: 60 },
+  { name: "RAG", value: 70 },
+  { name: "GCP", value: 57 },
   { name: "Kubernetes", value: 55 },
-    { name: "TensorFlow", value: 65 },
+  { name: "TensorFlow", value: 65 },
   { name: "Keras", value: 65 },
   { name: "scikit-learn", value: 65 },
+  { name: "Chroma", value: 65 },
   { name: "LSTM", value: 60 },
   { name: "Streamlit", value: 65 },
   { name: "Prompt Eng", value: 55 },
